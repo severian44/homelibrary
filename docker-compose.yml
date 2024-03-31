@@ -1,0 +1,12 @@
+services:
+
+  postal-db:
+    container_name: books-db
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=booksbase
+      - POSTGRES_USER=owner
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 4445:5432
+    restart: unless-stopped
